@@ -1,0 +1,263 @@
+/* Main container background */
+body {
+    background-color: #f4f4f9; /* Fondo gris claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+/* Contenedor de jugadores */
+#jugadores-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap; /* Permitir que los elementos salten a la siguiente fila si es necesario */
+}
+
+/* Estilos para cada tarjeta de jugador */
+.jugador-card {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 95%; /* Ajustar el ancho en pantallas pequeñas */
+    max-width: none; /* Eliminar el límite de ancho en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    flex-wrap: wrap; /* Flex wrap para ajustar mejor en pantallas pequeñas */
+}
+
+/* Información del jugador */
+.jugador-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.jugador-info img {
+    -webkit-border-radius: 50%; /* Compatibilidad con iOS Safari */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    object-fit: cover; /* Mantener el aspecto de la imagen dentro del contenedor */
+}
+
+.jugador-nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    word-wrap: break-word; /* Evitar que los nombres largos desborden */
+}
+
+.jugador-valor, .jugador-puntos {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Últimos puntos */
+.jugador-ultimos-puntos {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.punto-box {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.punto-verde {
+    background-color: #00cc44;
+}
+
+.punto-amarillo {
+    background-color: #ffcc00;
+}
+
+.punto-rojo {
+    background-color: #ff3333;
+}
+
+/* Estadísticas del jugador */
+.jugador-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 1.1em;
+    color: #4CAF50;
+    height: 100%;
+}
+
+/* Botón detalles */
+.jugador-actions button {
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.jugador-actions button:hover {
+    background-color: #e68900;
+}
+
+/* Estilo para el div de estadísticas detalladas */
+.estadisticas-detalladas {
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%; /* Aumentar el ancho en pantallas pequeñas */
+    max-width: 100%; /* Evitar restricciones de ancho máximo */
+    overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    display: none;
+}
+
+/* Estilo de la tabla de estadísticas */
+.estadisticas-detalladas table {
+    width: 100%;
+    color: white;
+    table-layout: fixed; /* Hacer que las columnas sean del mismo tamaño */
+    border-collapse: collapse;
+}
+
+.estadisticas-detalladas td {
+    padding: 8px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+/* Estilos para la cabecera */
+.cabecera {
+    display: flex;
+    justify-content: space-around; /* Distribuir botones de manera uniforme */
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    width: 100%; /* Asegurarse de que la cabecera ocupe todo el ancho */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Añadir sombra para darle más vida */
+}
+
+.nav-izquierda {
+    display: flex;
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+.nav-izquierda button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+}
+
+.nav-izquierda button:hover {
+    background-color: #45a049;
+}
+
+/* Alinear el texto de la derecha */
+.nav-derecha {
+    color: white;
+    font-size: 16px;
+}
+
+/* Estilo para el nombre de usuario (si lo necesitas en otro contexto) */
+#nombre-usuario {
+    margin-right: 20px;
+}
+
+/* Ajustar el contenedor para pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+    /* Asegurarse de que la tarjeta del jugador ocupe la mayor parte del ancho disponible */
+    .jugador-card {
+        width: 95%; /* Ajustar para que ocupe el 95% del ancho en pantallas pequeñas */
+        max-width: none; /* Eliminar el límite de 600px en pantallas pequeñas */
+    }
+
+    /* Ajustar la información del jugador en pantallas pequeñas */
+    .jugador-info img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .jugador-nombre {
+        font-size: 1.2rem; /* Reducir el tamaño del nombre en pantallas pequeñas */
+    }
+
+    .jugador-valor {
+        font-size: 1rem; /* Ajustar el tamaño de la fuente del valor */
+    }
+
+    /* Ajustar las estadísticas de puntos totales y media */
+    .jugador-puntos-totales, .jugador-puntos-media {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    }
+
+    /* Botón de detalles más pequeño en pantallas pequeñas */
+    .jugador-actions button {
+        padding: 6px 12px; /* Reducir el padding para que el botón sea más pequeño */
+        font-size: 0.9rem;
+    }
+
+    /* Aumentar el ancho de las estadísticas detalladas */
+    .estadisticas-detalladas {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        max-width: none;
+    }
+}
+
+/* Hacer que las tarjetas tengan un buen aspecto en pantallas medianas a grandes */
+@media (min-width: 601px) {
+    .jugador-card {
+        width: 80%; /* Ajustar para pantallas más grandes */
+        max-width: 800px; /* Hacer que las tarjetas ocupen más espacio */
+    }
+
+    .jugador-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .jugador-nombre {
+        font-size: 1.5rem;
+    }
+
+    .jugador-valor {
+        font-size: 1.2rem;
+    }
+
+    .jugador-actions button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Ampliar estadísticas detalladas en pantallas grandes */
+    .estadisticas-detalladas {
+        width: 90%; /* Ajustar el ancho de las estadísticas */
+        max-width: 900px; /* Aumentar el tamaño máximo */
+    }
+}
